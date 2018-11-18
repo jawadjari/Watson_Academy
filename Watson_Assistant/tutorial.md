@@ -1,7 +1,6 @@
 # Tutorial Pas à Pas
 
 # Comment construire un agent conversationnel 
-We will be creating a bot to take coffee orders.
 Nous allons créer un chatbot qui permet la prise de commande de café ou thé et renseigne le client sur les produits et leurs prix.
 
 ## Création d'un compte ou accès à la plateforme IBM Cloud
@@ -9,52 +8,51 @@ Nous allons créer un chatbot qui permet la prise de commande de café ou thé e
 2. Ou, aller à  https://console.bluemix.net/ et identifiez vous avec votre compte.
 
 ## Création d'une instance IBM Watson Assistant (ex- Watson Conversation)
-1. Once logged in, click on `Catalog` in the upper right corner of the screen
-2. Search for `Assistant`
-3. Under the `Watson` Category, click on `Assistant`
-4. Scroll down and make sure `Lite` Plan is selected for the free plan
-5. Click `Create`
-6. Click on `Launch tool`
+1. Une fois authentifié, cliquez sur `Catalog` dans la barre supérieure de l'écran
+2. Recherchez `Assistant`
+3. Dans la catégorie `AI ou IA`, cliquez sur `Watson Assistant`
+5. Cliquez `Create/Créer`
+6. Puis, cliquez sur `Launch tool/Outil de lancement`
 
-## Creating a workspace
-1. Once in the tooling, click `Create` to add a new workspace
-2. Name it something like `Coffee-bot` and select the desired language
+## Création d'un Skill
+1. Une fois dans l'outil d'administration de Watson Assistant, cliquez sur `Create` pour ajouter un nouveau skill
+2. Donnez un nom à ce skill par exemple `Coffee-bot` et sélectionnez la langue Française (sauf si vous souhaitez essayer dans une autre langue)
 
-## Building Intents
-1. Click `Add intent`
-2. Name the new intent `order-drink`
-3. Add a description of what the intent will do. For this, let's use "User wants to order a drink."
-4. Hit `Enter` to create the intent
-5. Start adding a few exaxmples of how a user would order a drink (at least 5 examples are recommended). Let's use the following:
-  - i would like to order a coffee please
-  - I need some caffeine
-  - order espresso
-  - a cappuccino would be lovely
-  - a latte please
-6. Open the `Try it Out` panel by clicking on the speech bubble in the upper right corner. This allows you to test how your bot will respond
-7. Wait for the bot to finish training, then type `can I order a coffee`. It should classify the intent as `#order-drink`. Even though you didn't train the intent on this exact sentence, Watson can still understand it.
-8. Add a few more intents to make your bot more robust. Try creating the following intents and adding a few examples to each:
-  - #see-menu (User wants to see what's on the menu)
-  - #greetings (User greets the bot)
-  - #thanks (User thanks the bot)
+## Création des Intents/Intentions
+1. Cliquez `Add intent`
+2. Nommez la nouvelle intention `commande-boisson`
+3. Ajouter une description expliquant le but de cette intention. Par exemple, "Le client veut commander une boisson."
+4. Cliquez `Enter` pour créer l'intention.
+5. Commencer par ajouter quelques exemples de phrases qu'un client pourrait écrire pour commander une boisson. (A minima 5 phrases)
+  - Je souhaiterai commander un expresso
+  - J'ai besoin de cafféine
+  - un latte 
+  - un cappuccino serait apprécié
+  - Un mocha s'il vous plait
+6. Ouvrir le panneau `Try it Out` en cliquant sur la bulle en haut à droite. Cela vous permet de tester la réaction de votre bot
+7. Attendez que le bot termine son entraînement, puis tapez `Pourrais-je commander un expresso`. Le bot doit classifier cette phrase `commande-boisson`. Même si vous n’avez pas appris l’intention sur cette phrase exacte, Watson peut toujours la comprendre.
+8. Ajoutez quelques intentions supplémentaires pour couvrir d'autres demandes. Essayez de créer les intentions suivantes et d’ajouter quelques exemples à chacune d’elles
+  - #voir-produits (Le client veut connaitre les produits disponibles)
+  - #prix (Le client veut connaitre le prix des produits)
+  - #recherche_magasin (Le Client cherche la localisation des magasins)
   
-Here are the finished intents:
+Voila les intentions finies:
 ![finished intents](https://github.com/desmarchris/think-lab/blob/master/pictures/finished-intents.png)
 
-## Building Entities
-1. Click on the `Entities` tab at the top of the page
-2. Click `Add entity` and add the name `drink`
-3. Turn `Fuzzy Matching` on if you want Watson to understand misspellings
+## Création des Entities
+1. Cliquez sur l'onglet `Entities`
+2. Cliquez `Add entity` and add the name `boisson`
+3. Activez `Fuzzy Matching` si vous souhaitez que Watson comprenne les erreurs de frappe.
 4. Add a value `coffee` with the synonym of `cafe`. 
 5. Add some additional values that you allow your users to order and any synonyms, for example:
   - espresso
   - cappuccino
   - latte
   - tea
-6. Exit the page, and click on `System entities` underneath the `Entities` tab
-7. Turn on `@sys-number`
+6. Quittez la page, et cliquez sur `System entities` dans l'onglet `Entities` 
+7. Activez`@sys-number` pour permettre la détection des nombres.
 
-Here is how your finished entity `@drink` should look:
+Voici l'entité `@boisson` finalisée:
 ![finished entity](https://github.com/desmarchris/think-lab/blob/master/pictures/finished-entity.png)
 
 ## Building Dialog

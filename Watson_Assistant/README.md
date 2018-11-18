@@ -23,6 +23,7 @@ Listes des articles:
 - Expresso : 3€
 - Latte : 3.5€
 - Mocha : 4€
+- Cappuccino : 5€
 
 2. Thé :
 - Menthe : 2.5€
