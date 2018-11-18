@@ -1,6 +1,6 @@
 # Scénario du Workshop
 
-![logo](https://github.com/vperrinfr/Watson_Academy/blob/master/pictures/logo.jog)
+![logo](https://github.com/vperrinfr/Watson_Academy/blob/master/pictures/logo.jpg)
 
 Bonjour,
 
@@ -20,13 +20,15 @@ Pour la livraison demander le numéro de téléphone et le stocker
 
 Listes des articles:
 1. Café :
-- Expresso 
-- Latte
-- Mocha 
+- Expresso : 3€
+- Latte : 3.5€
+- Mocha : 4€
 
 2. Thé :
-- Menthe
-- Ceylan
+- Menthe : 2.5€
+- Ceylan : 3 €
+
+La livraison est factruré 5€.
 
 Merci de votre aide pour ce projet.
 
@@ -35,7 +37,7 @@ BONNE CHANCE
 # Accélérateurs / Aide
 
 - Photos des produits: répertoire data/pictures
-- REGULAR Expression (REGEX): 
+- Regular Expression (REGEX): 
     - Téléphone Mobile:  /^((\+|00)33\s?|0)[67](\s?\d{2}){4}$/
     - Regex carte de fidélité :
 
