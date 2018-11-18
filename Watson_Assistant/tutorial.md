@@ -41,13 +41,15 @@ Voila les intentions finies:
 
 ## Création des Entities
 1. Cliquez sur l'onglet `Entities`
-2. Cliquez `Add entity` and add the name `boisson`
+2. Cliquez `Add entity` and add the name `boissons`
 3. Activez le `Fuzzy Matching` si vous souhaitez que Watson comprenne les erreurs de frappe.
 4. Ajoutez la valeur `espresso` avec comme synonyme `cafe`. 
 5. Ajoutez d'autres valeurs correspondant aux produits au catalogue :
   - Cappuccino
   - Latte
-  - Thé Menthe
+  - Menthe
+  - Mocha
+  - Ceylan
 6. Quittez la page, et cliquez sur `System entities` dans l'onglet `Entities` 
 7. Activez`@sys-number` pour permettre la détection des nombres.
 
@@ -58,15 +60,19 @@ Voici l'entité `@boisson` finalisée:
 10. Désactivez le `Fuzzy Matching`
 11. Saississez `Téléphone`comme nom
 11. Sélectionnez `Patterns` au lien de `Synonyms`
-12. Copiez l'expression régulière pour détecter/valider un numéro de téléphone : ^(\\+33|0|0033)[0-9]{9}$
+12. Copiez l'expression régulière pour détecter/valider un numéro de téléphone : ^(\\\\+33|0|0033)[0-9]{9}$
 13. Tester la reconnaissance d'un numéro de téléphone dans le panneau `Try it out`
+14. Cliquez `Add entity` and add the name `Livraison`
 
-## Building Dialog
-1. Click on the `Dialog` tab at the top of the page
-2. Click `Create`
-3. Click on the `Welcome` node if you would like to change the intro message
-4. Click `Add node`, and name it `Greetings`
-5. Add your `#greetings` intent as the field for `If bot recognizes`
+## Construction du dialogue
+1. Cliquez sur l'onglet `Dialog`
+2. Cliquez `Create`
+3. Cliquez sur le node `Welcome` si vous souhaitez changer/personnaliser le message d'accueil
+4. Cliquez `Add node`, and name it `commande-boisson`
+5. Ajoutez votre intention `#commande-boisson` comme valeur dans le champ `If bot recognizes`
+
+--------------------------------------------------------
+
 6. Fill in a response that says something like "Hi! How can I help you today?"
 7. Create two more nodes for `#thanks` and `#see-menu` and add responses
 8. Create another node and name it `Order Drink`
@@ -81,21 +87,8 @@ Voici l'entité `@boisson` finalisée:
 Finished dialog tree with `Order Drink` open:
 ![finished dialog](https://github.com/desmarchris/think-lab/blob/master/pictures/finished-dialog.png)
 
-## Test in Slack
-Now that you have a functioning bot, let's do a quick deploy to see it working in a channel (Slack). You must be an administrator to add a bot. To create a Slack workspace, follow this tutorial: https://get.slack.help/hc/en-us/articles/206845317-Create-a-Slack-workspace
-1. Click on the `Deploy` tab from the left nav bar (it's the second icon)
-2. Under the Slack card, click `Deploy`
-3. Click `Test in Slack` (Note: this uses an IBM hosted app and is meant for testing. To actually deploy this to Slack, you need to use `Deploy to Slack App`)
-4. Click on `Authorize Slack`
-5. If you are sent to slack.com and see an error about adding a workspace, make sure you are an administrator or click in the top right to sign into your own workspace
-6. Once in Slack, click `Authorize` to give access to your bot. If done correctly, you will be brought back to the WA tooling and see your Slack workspace has been authorized.
-7. Go into your Slack workspace (I use the web app), and rather invite the bot to a channel or find them on direct message as `@ibmwatson_bot`
-8. Say hello! (If it seems like the bot isn't replying and you are in a channel, try mentioning the bot by first typing `@ibmwatson_bot` followed by your message)
-
-![finished bot](https://github.com/desmarchris/think-lab/blob/master/pictures/finished-bot.png)
-
-## If you want more...
-Did you finish the above and want to learn more? Try some of the following methods to bolster your CoffeeBot.
+## Pour aller plus loin...
+Vous avez fini et vous voulez tester d'autres fonctionnalités...
 
 ### Resetting context
 If your user orders a drink and completes the flow, and they try to make another order, the values found from the first flow will still be there so they will not be able to order something else. To fix this, we need to clear the context after a successful order so the values are not stored for the next order.

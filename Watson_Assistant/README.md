@@ -29,7 +29,7 @@ Listes des articles:
 - Menthe : 2.5€
 - Ceylan : 3 €
 
-La livraison est factruré 5€.
+La livraison est facturé 5€.
 
 Merci de votre aide pour ce projet.
 
@@ -39,7 +39,7 @@ BONNE CHANCE
 
 - Photos des produits: répertoire data/pictures
 - Regular Expression (REGEX): 
-    - Téléphone Mobile:  /^((\+|00)33\s?|0)[67](\s?\d{2}){4}$/
+    - Téléphone Mobile:  ^(\\\\+33|0|0033)[0-9]{9}$
     - Regex carte de fidélité :
 
 ## Fichiers : 
