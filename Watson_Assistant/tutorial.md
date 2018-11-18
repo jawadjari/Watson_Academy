@@ -42,18 +42,24 @@ Voila les intentions finies:
 ## Création des Entities
 1. Cliquez sur l'onglet `Entities`
 2. Cliquez `Add entity` and add the name `boisson`
-3. Activez `Fuzzy Matching` si vous souhaitez que Watson comprenne les erreurs de frappe.
-4. Add a value `coffee` with the synonym of `cafe`. 
-5. Add some additional values that you allow your users to order and any synonyms, for example:
-  - espresso
-  - cappuccino
-  - latte
-  - tea
+3. Activez le `Fuzzy Matching` si vous souhaitez que Watson comprenne les erreurs de frappe.
+4. Ajoutez la valeur `espresso` avec comme synonyme `cafe`. 
+5. Ajoutez d'autres valeurs correspondant aux produits au catalogue :
+  - Cappuccino
+  - Latte
+  - Thé Menthe
 6. Quittez la page, et cliquez sur `System entities` dans l'onglet `Entities` 
 7. Activez`@sys-number` pour permettre la détection des nombres.
 
 Voici l'entité `@boisson` finalisée:
 ![finished entity](https://github.com/desmarchris/think-lab/blob/master/pictures/finished-entity.png)
+
+9. Cliquez `Add entity` and add the name `Modèle_REGEX`
+10. Désactivez le `Fuzzy Matching`
+11. Saississez `Téléphone`comme nom
+11. Sélectionnez `Patterns` au lien de `Synonyms`
+12. Copiez l'expression régulière pour détecter/valider un numéro de téléphone : ^(\\+33|0|0033)[0-9]{9}$
+13. Tester la reconnaissance d'un numéro de téléphone dans le panneau `Try it out`
 
 ## Building Dialog
 1. Click on the `Dialog` tab at the top of the page
