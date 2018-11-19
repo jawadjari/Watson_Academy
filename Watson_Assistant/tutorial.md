@@ -1,6 +1,4 @@
-# Tutorial Pas à Pas
-
-# Comment construire un agent conversationnel 
+# Tutorial Pas à Pas : Comment construire un agent conversationnel 
 Nous allons créer un chatbot qui permet la prise de commande de café ou thé et renseigne le client sur les produits et leurs prix.
 
 ## Création d'un compte ou accès à la plateforme IBM Cloud
@@ -63,6 +61,7 @@ Voici l'entité `@boisson` finalisée:
 12. Copiez l'expression régulière pour détecter/valider un numéro de téléphone : ^(\\\\+33|0|0033)[0-9]{9}$
 13. Tester la reconnaissance d'un numéro de téléphone dans le panneau `Try it out`
 14. Cliquez `Add entity` and add the name `Livraison`
+14. Cliquez `Add entity` and add the name `Validation` 
 
 ## Construction du dialogue
 1. Cliquez sur l'onglet `Dialog`
@@ -70,19 +69,28 @@ Voici l'entité `@boisson` finalisée:
 3. Cliquez sur le node `Welcome` si vous souhaitez changer/personnaliser le message d'accueil
 4. Cliquez `Add node`, and name it `commande-boisson`
 5. Ajoutez votre intention `#commande-boisson` comme valeur dans le champ `If bot recognizes`
-
+6. En haut à droite du noeud, cliquez sur `Customize`
+7. Activez les `Slots` et appuyez sur `Apply`
+12. Dans la rubrique `Check for`, ajouter `@boissons`
+13. Dans la rubrique `If not present, ask` ajoutez une question comme "Que souhaitez-vous boire ?"
+14. Cliquez `Add slot`, et ajoutez une condition "prompt for" `@sys-number` avec la question "Combien de tasses de $boissons souhaitez-vous ?"
+(Note: La syntaxe `$variable` permet l'accès au contenu du variable.)
+14. Cliquez `Add slot`, et ajoutez une condition "prompt for" `@Livraison` avec la question "A emporter ou sur place ?"
+15. Ajoutez la réponse "Ok, j'ai donc une $number $boissons pour vous, $Livraison !  "
+16. Créez un noeud fils, avec le nom `validation`
+17. Dans le champ `If assistant recognizes`, saissisez `@Validation`. Ce noeud attend une entité de validation.
+18. En haut à droite du noeud, cliquez sur `Customize`
+19. Activez les `Multiples Responses` et appuyez sur `Apply`. 
+20. Dans le champ `If assistant recognizes`, ajouter `@Validation:Oui`, saissisez la réponse dans le champ `Respond with` suite à la confirmation.
+21. Dans le champ `If assistant recognizes`, ajouter `@Validation:Non`, saissisez la réponse dans le champ `Respond with`
+22. Cliquez `Add node`, and name it `prix-boisson`
+23. Ajoutez votre intention `#prix-boisson` comme valeur dans le champ `If bot recognizes`. Cliquez sur le signe `+` et rajouter l'entité `boissons` avdec le séparateur `AND`.
+24. En haut à droite du noeud, cliquez sur `Customize`
+25. Activez les `Multiples Responses` et appuyez sur `Apply`. 
+26. Dans le champ `If assistant recognizes`, ajouter `@boissons:Latte`, saissisez la réponse dans le champ `Respond with`
+27. Rajoutez d'autres conditions comme `@boissons:espresso`, `@boissons:capuccino`
+28. Vous pouvez ensuite faire de même pour la demande de localisation
 --------------------------------------------------------
-
-6. Fill in a response that says something like "Hi! How can I help you today?"
-7. Create two more nodes for `#thanks` and `#see-menu` and add responses
-8. Create another node and name it `Order Drink`
-9. To the right of the name, click on `Customize`
-10. Turn on `Slots` and hit `Apply`
-11. Add the intent `#order-drink`to `If bot recognizes`
-12. Under `Check for`, add the entity `@drink`
-13. Under `If not present, ask` add a question like "What would you like to drink?"
-14. Click `Add slot`, and add a condition and prompt for `@sys-number`: "How many cups of $drink would you like?" (Note: the syntax `$variable` is short hand for accessing Context variables. Context variables allow you to pass information between your application and Conversation.)
-15. Add in the response, "Ok, I have $number $drink coming right up!"
 
 Finished dialog tree with `Order Drink` open:
 ![finished dialog](https://github.com/desmarchris/think-lab/blob/master/pictures/finished-dialog.png)
