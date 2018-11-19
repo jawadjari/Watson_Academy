@@ -1,0 +1,16 @@
+Je souhaiterai commander un expresso,commande-boisson
+J'ai besoin de cafféine,commande-boisson
+un latte,commande-boisson
+un cappuccino serait apprécié,commande-boisson
+Un mocha s'il vous plait,commande-boisson
+Combien coûte un espresso ?,prix
+Quel est le prix d'un latte ?,prix
+Combien d'euros pour un thé à la Menthe ?,prix
+Quelle est votre adresse à Lyon ?,recherche_magasin
+Où se situe le Coffee Shop à Paris ?,recherche_magasin
+"J'habite à Bordeaux, je peux vous trouver où ?",recherche_magasin
+Qu'avez-vous comme boisson ?,voir-produits
+"J'ai soif, qu'avez -vous à la carte ?",voir-produits
+Je peux boire quoi ?,voir-produits
+Pouvez-vous me montrer la carte ?,voir-produits
+Quelles boissons proposez-vous ?,voir-produits

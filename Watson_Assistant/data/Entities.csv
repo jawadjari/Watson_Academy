@@ -1,0 +1,15 @@
+boissons,Ceylan
+boissons,Cappuccino
+boissons,Latte
+boissons,Menthe
+boissons,Mocha
+boissons,espresso,café,cafféine
+Livraison,A emporter,en magasin,sur place
+Livraison,livraison,à la maison
+Modèle_REGEX,Telephone,/^(\\+33|0|0033)[0-9]{9}$/
+Validation,Oui,D'accord,Tout à fait,Parfait
+Validation,Non,Pas du tout
+Ville,Paris
+Ville,Bordeaux
+Ville,Lille
+Ville,Marseille
