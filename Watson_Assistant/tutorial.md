@@ -108,6 +108,8 @@ Voici la liste des entités finalisée:
 Arborescence du dialogue :
 ![finished dialog](https://github.com/vperrinfr/Watson_Academy/blob/master/pictures/dialog.png)
 
+Bravo, votre premier chatbot est en oeuvre :clap: :clap:
+
 ## Pour aller plus loin...
 Vous avez fini et vous voulez tester d'autres fonctionnalités...
 
@@ -115,14 +117,67 @@ Vous avez fini et vous voulez tester d'autres fonctionnalités...
 Watson Assistant permet de faire des appels de programmation à des applications ou des services externes et renvoyer un résultat dans le cadre du traitement qui se produit au sein d'un échange de dialogue.
 Dans cette exemple, nous allons exécuter un appel pour recuperer le prix de la commande.
 
+1. Dans le sous-node de Validation, cliquer sur la roue dentée à coté de "Validation:Oui" 
+2. Copier le code suivant dans le `JSON editor` (remplacer le contenu actuel)
+```
+{
+  "context": {
+    "private": {
+      "function_credentials": {
+        "user": "XXXXXXXX",
+        "password": "YYYYYY"
+      }
+    }
+  },
+  "output": {
+    "text": {
+      "values": [],
+      "selection_policy": "sequential"
+    }
+  },
+  "actions": [
+    {
+      "name": "/vincent.perrin@fr.ibm.com_dev/vperrin/Watson_Pricing",
+      "type": "server",
+      "parameters": {
+        "nombre": "$number",
+        "boisson": "$boissons",
+        "livraison": "$Livraison"
+      },
+      "credentials": "$private.function_credentials",
+      "result_variable": "context.extraction"
+    }
+  ]
+}
+```
+Lien vers le user/password de la IBM Cloud Function : [lien](https://ibm.ent.box.com/notes/353062724451)
+
+3. Créer un sous-node à `commande-boisson` avec pour texte:
+`La commande est faite, cela vous coutera $extraction.prix . Merci pour votre commande.`
+4. Changer l'option de `And finally` pour utiliser "Jump To" au niveau du critère "Validation:Oui"
+
+![finished dialog](https://github.com/vperrinfr/Watson_Academy/blob/master/pictures/JumpTo.png)
+
 ### Help - Digressions
-Sometimes, you will want an intent to be handled no matter where the user is in their flow. Think of Digressions as a global 'manage handlers': they allow you to respond to an intent even if a user is in the middle of a process flow, and then it allows them to return to their prior flow. If your user wants some help talking to the bot anywhere in your bot, this is a good intent to have digressions enabled.
-1. Create a `#help` intent with examples like: "I need help"
-2. Create a node below your `Order Drink` node
-3. Add the condition of `#help` with a response like: "I can help you order a drink from my coffee shop. Just say order drink to get started!"
-4. Go into the `Customize` portion of the node by clicking in the upper right
-5. Click on the `Digressions` tab
-6. Enable `Return after digression` (Digressions should be on by default, this setting allows you to handle the intent and then return back to the flow)
-7. Now to test this out, we need to get in the middle of our order drink flow. But first, since it is a slot, we need to go into the `Digressions` tab in the `Order Drink` slots node
-8. Turn on `Allow digressions away while slot filling` and click the button that only allows nodes with returns enabled. This will help you to control which nodes you want to allow to digress to
-9. Try it out by saying "order drink", then when asked for what kind of drink you want, say "help". You should see a response from your help node with another follow up message for the next slot filling question
+Parfois, vous voudrez qu'une intention soit gérée, peu importe où se trouve l'utilisateur dans leur flux. Pensez aux digressions, ils vous permettent de répondre à une intention même si un utilisateur se trouve au milieu d'un flux de processus, puis de revenir à son flux précédent. Si votre utilisateur a besoin d'aide pour parler au bot n'importe où dans son bot, il est judicieux d'activer les digressions.
+1. Créez l'intention `#Aide` avec des exemples comme "J'ai besoin d'aide"
+2. Créez un noeud `Aide`à la racine.
+3. Ajouter la condition `#Aide` : "
+Je peux vous aider à commander un verre dans mon café. Il suffit de dire commander un café pour commencer!"
+4. Aller dans la partie `Customize` du noeud
+5. Cliquez sur l'onglet `Digressions` 
+6. Activez `Return after digression` (Les digressions doivent être activées par défaut, ce paramètre vous permet de gérer l'intention puis de revenir au flux.)
+7. Maintenant, pour tester cela, nous devons nous situer au milieu du flux de boissons de notre commande. Mais d’abord, puisque c’est un slot, il faut aller dans l’onglet `Digressions` du nœud `commande-boisson`
+8. Activez `Allow digressions away while slot filling` et cliquez sur le bouton n'autorisant que les noeuds dont les retours sont activés. Cela vous aidera à contrôler les nœuds sur lesquels vous souhaitez autoriser l’écart.
+9. Essayez-le en disant «commander un verre, puis, quand on vous le demandera ce que vous voulez boire, dites «Aide». Vous devriez voir une réponse de votre noeud d’aide avec un autre message de suivi pour la prochaine question de remplissage d’emplacement.
+
+### Help - Contenu général
+
+1. Cliquez sur `Content Catalog` dans la barre supérieur
+2. Cliquez sur le terme `Général` pour voir les différentes intentions pré-entrainées de cette catégorie.
+3. Cliquez sur `Add to skill` dans le coin supérieur droit de l'écran. L'ensemble des 10 intentions ont été rajouté à la liste de vos intentions.
+4. Vous pouvez maintenant créer de nouveaux noeuds pour répondre aux questions liées à ces nouvelles intentions.
+
+
+
+

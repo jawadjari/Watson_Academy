@@ -2,9 +2,7 @@
 
 1. Créer un service Watson Discovery depuis l'interface IBM Cloud
 2. Lancer l'outil
-3. Création d'une collection, via l'upload des document
-
-configuration par défaut
+3. Création d'une collection, via l'upload des documents
 4. Charger les 9 documents
 ° Analyser l'écran d'accueil de la data
 Passez en revue les renseignements découverts par Watson dans vos documents enrichis. 

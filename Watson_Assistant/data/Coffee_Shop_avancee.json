@@ -1,0 +1,618 @@
+{
+  "name": "Coffee_Shop",
+  "intents": [
+    {
+      "intent": "commande-boisson",
+      "examples": [
+        {
+          "text": "Je souhaiterai commander un expresso"
+        },
+        {
+          "text": "J'ai besoin de cafféine"
+        },
+        {
+          "text": "un latte"
+        },
+        {
+          "text": "un cappuccino serait apprécié"
+        },
+        {
+          "text": "Un mocha s'il vous plait"
+        },
+        {
+          "text": "je veux un verre"
+        }
+      ],
+      "description": "Le client veut commander une boisson."
+    },
+    {
+      "intent": "Aide",
+      "examples": [
+        {
+          "text": "Aide"
+        },
+        {
+          "text": "Besoin d'aide"
+        }
+      ],
+      "description": ""
+    },
+    {
+      "intent": "recherche_magasin",
+      "examples": [
+        {
+          "text": "Où se situe le Coffee Shop à Paris ?"
+        },
+        {
+          "text": "J'habite à Bordeaux, je peux vous trouver où ?"
+        },
+        {
+          "text": "Quelle est votre adresse à Lyon ?"
+        }
+      ],
+      "description": "Demande de localisation d'un magasin"
+    },
+    {
+      "intent": "prix",
+      "examples": [
+        {
+          "text": "Combien coûte un espresso ?"
+        },
+        {
+          "text": "Quel est le prix d'un latte ?"
+        },
+        {
+          "text": "Combien d'euros pour un thé à la Menthe ?"
+        }
+      ],
+      "description": "Demande du prix d'une boisson"
+    },
+    {
+      "intent": "voir-produits",
+      "examples": [
+        {
+          "text": "Qu'avez-vous comme boisson ?"
+        },
+        {
+          "text": "J'ai soif, qu'avez -vous à la carte ?"
+        },
+        {
+          "text": "Pouvez-vous me montrer la carte ?"
+        },
+        {
+          "text": "Quelles boissons proposez-vous ?"
+        },
+        {
+          "text": "Je peux boire quoi ?"
+        }
+      ],
+      "description": "Lister les produits à la carte"
+    }
+  ],
+  "entities": [
+    {
+      "entity": "Validation",
+      "values": [
+        {
+          "type": "synonyms",
+          "value": "Oui",
+          "synonyms": [
+            "D'accord",
+            "Tout à fait",
+            "Parfait"
+          ]
+        },
+        {
+          "type": "synonyms",
+          "value": "Non",
+          "synonyms": [
+            "Pas du tout"
+          ]
+        }
+      ],
+      "fuzzy_match": true
+    },
+    {
+      "entity": "Livraison",
+      "values": [
+        {
+          "type": "synonyms",
+          "value": "A emporter",
+          "synonyms": [
+            "en magasin",
+            "sur place"
+          ]
+        },
+        {
+          "type": "synonyms",
+          "value": "livraison",
+          "synonyms": [
+            "à la maison"
+          ]
+        }
+      ],
+      "fuzzy_match": true
+    },
+    {
+      "entity": "Modèle_REGEX",
+      "values": [
+        {
+          "type": "patterns",
+          "value": "Telephone",
+          "patterns": [
+            "^(\\\\+33|0|0033)[0-9]{9}$"
+          ]
+        }
+      ],
+      "fuzzy_match": true
+    },
+    {
+      "entity": "boissons",
+      "values": [
+        {
+          "type": "synonyms",
+          "value": "Ceylan",
+          "synonyms": []
+        },
+        {
+          "type": "synonyms",
+          "value": "Expresso",
+          "synonyms": [
+            "café",
+            "cafféine",
+            "espresso"
+          ]
+        },
+        {
+          "type": "synonyms",
+          "value": "Cappuccino",
+          "synonyms": []
+        },
+        {
+          "type": "synonyms",
+          "value": "Latte",
+          "synonyms": []
+        },
+        {
+          "type": "synonyms",
+          "value": "Menthe",
+          "synonyms": []
+        },
+        {
+          "type": "synonyms",
+          "value": "Mocha",
+          "synonyms": []
+        }
+      ],
+      "fuzzy_match": true
+    },
+    {
+      "entity": "Ville",
+      "values": [
+        {
+          "type": "synonyms",
+          "value": "Lille",
+          "synonyms": []
+        },
+        {
+          "type": "synonyms",
+          "value": "Paris",
+          "synonyms": []
+        },
+        {
+          "type": "synonyms",
+          "value": "Marseille",
+          "synonyms": []
+        },
+        {
+          "type": "synonyms",
+          "value": "Bordeaux",
+          "synonyms": []
+        }
+      ],
+      "fuzzy_match": true
+    },
+    {
+      "entity": "sys-number",
+      "values": []
+    }
+  ],
+  "language": "fr",
+  "metadata": {
+    "api_version": {
+      "major_version": "v1",
+      "minor_version": "2018-07-10"
+    }
+  },
+  "description": "",
+  "dialog_nodes": [
+    {
+      "type": "event_handler",
+      "output": {
+        "text": "Que souhaitez-vous boire ?"
+      },
+      "parent": "slot_2_1542634191836",
+      "event_name": "focus",
+      "dialog_node": "handler_4_1542634191836",
+      "previous_sibling": "handler_3_1542634191836"
+    },
+    {
+      "type": "event_handler",
+      "parent": "slot_2_1542634191836",
+      "context": {
+        "boissons": "@boissons"
+      },
+      "conditions": "@boissons",
+      "event_name": "input",
+      "dialog_node": "handler_3_1542634191836"
+    },
+    {
+      "type": "event_handler",
+      "output": {
+        "text": "A emporter ou sur place ?"
+      },
+      "parent": "slot_8_1542634228126",
+      "event_name": "focus",
+      "dialog_node": "handler_10_1542634228126",
+      "previous_sibling": "handler_9_1542634228126"
+    },
+    {
+      "type": "event_handler",
+      "parent": "slot_8_1542634228126",
+      "context": {
+        "Livraison": "@Livraison"
+      },
+      "conditions": "@Livraison",
+      "event_name": "input",
+      "dialog_node": "handler_9_1542634228126"
+    },
+    {
+      "type": "response_condition",
+      "output": {
+        "text": {
+          "values": [
+            "Un café Latte coûte 3.5€"
+          ],
+          "selection_policy": "sequential"
+        }
+      },
+      "parent": "node_15_1542634606780",
+      "metadata": {},
+      "conditions": "@boissons:Latte",
+      "dialog_node": "node_17_1542634666550",
+      "previous_sibling": "node_16_1542634621801"
+    },
+    {
+      "type": "response_condition",
+      "output": {
+        "text": {
+          "values": [
+            "Le thé à la Menthe est à 2.5€"
+          ],
+          "selection_policy": "sequential"
+        }
+      },
+      "parent": "node_15_1542634606780",
+      "metadata": {},
+      "conditions": "@boissons:Menthe",
+      "dialog_node": "node_20_1542634833741",
+      "previous_sibling": "node_19_1542634779616"
+    },
+    {
+      "type": "response_condition",
+      "output": {
+        "text": {
+          "values": [
+            "Un thé Ceylan est à 3€"
+          ],
+          "selection_policy": "sequential"
+        }
+      },
+      "parent": "node_15_1542634606780",
+      "metadata": {},
+      "conditions": "@boissons:Ceylan",
+      "dialog_node": "node_21_1542634859318",
+      "previous_sibling": "node_20_1542634833741"
+    },
+    {
+      "type": "response_condition",
+      "output": {
+        "text": {
+          "values": [
+            "Un Cappuccino coûte 5€"
+          ],
+          "selection_policy": "sequential"
+        }
+      },
+      "parent": "node_15_1542634606780",
+      "metadata": {},
+      "conditions": "@boissons:Cappuccino",
+      "dialog_node": "node_19_1542634779616",
+      "previous_sibling": "node_18_1542634699855"
+    },
+    {
+      "type": "response_condition",
+      "output": {
+        "text": {
+          "values": [
+            "Un Mocha coûte 4€"
+          ],
+          "selection_policy": "sequential"
+        }
+      },
+      "parent": "node_15_1542634606780",
+      "metadata": {},
+      "conditions": "@boissons:Mocha",
+      "dialog_node": "node_18_1542634699855",
+      "previous_sibling": "node_17_1542634666550"
+    },
+    {
+      "type": "response_condition",
+      "output": {
+        "text": {
+          "values": [
+            "Un expresso coûte 3€"
+          ],
+          "selection_policy": "sequential"
+        }
+      },
+      "parent": "node_15_1542634606780",
+      "metadata": {},
+      "conditions": "@boissons:espresso",
+      "dialog_node": "node_16_1542634621801"
+    },
+    {
+      "type": "event_handler",
+      "output": {
+        "text": "Combien de tasses de $boissons souhaitez-vous ?"
+      },
+      "parent": "slot_5_1542634205926",
+      "event_name": "focus",
+      "dialog_node": "handler_7_1542634205926",
+      "previous_sibling": "handler_6_1542634205926"
+    },
+    {
+      "type": "event_handler",
+      "parent": "slot_5_1542634205926",
+      "context": {
+        "number": "@sys-number"
+      },
+      "conditions": "@sys-number",
+      "event_name": "input",
+      "dialog_node": "handler_6_1542634205926"
+    },
+    {
+      "type": "response_condition",
+      "output": {
+        "text": {
+          "values": [
+            "Dommage..."
+          ],
+          "selection_policy": "sequential"
+        }
+      },
+      "parent": "node_11_1542634495368",
+      "metadata": {},
+      "conditions": "@Validation:Non",
+      "dialog_node": "node_13_1542634579208",
+      "previous_sibling": "node_12_1542634538927"
+    },
+    {
+      "type": "response_condition",
+      "output": {
+        "text": {
+          "values": [],
+          "selection_policy": "sequential"
+        }
+      },
+      "parent": "node_11_1542634495368",
+      "actions": [
+        {
+          "name": "/vincent.perrin@fr.ibm.com_dev/vperrin/Watson_Pricing",
+          "type": "server",
+          "parameters": {
+            "nombre": "$number",
+            "boisson": "$boissons",
+            "livraison": "$Livraison"
+          },
+          "credentials": "$private.function_credentials",
+          "result_variable": "context.extraction"
+        }
+      ],
+      "context": {
+        "private": {
+          "function_credentials": {
+            "user": "bac313a1-fd00-4cc9-9e26-524963f6dc37",
+            "password": "SoJtpSuhjdIiP63LqWRoTE4Yxf92bxkjpto7TYFRRgVC9H5I1agI3aMdhOCrvHKY"
+          }
+        }
+      },
+      "metadata": {},
+      "next_step": {
+        "behavior": "jump_to",
+        "selector": "condition",
+        "dialog_node": "node_1_1542641364486"
+      },
+      "conditions": "@Validation:Oui",
+      "dialog_node": "node_12_1542634538927"
+    },
+    {
+      "type": "slot",
+      "parent": "node_1_1542634125471",
+      "variable": "$number",
+      "dialog_node": "slot_5_1542634205926",
+      "previous_sibling": "slot_2_1542634191836"
+    },
+    {
+      "type": "slot",
+      "parent": "node_1_1542634125471",
+      "variable": "$Livraison",
+      "dialog_node": "slot_8_1542634228126",
+      "previous_sibling": "slot_5_1542634205926"
+    },
+    {
+      "type": "standard",
+      "title": "Calcul",
+      "output": {
+        "text": {
+          "values": [
+            "La commande est faite, cela vous coutera $extraction.prix . Merci pour votre commande."
+          ],
+          "selection_policy": "sequential"
+        }
+      },
+      "parent": "node_1_1542634125471",
+      "metadata": {},
+      "conditions": "true",
+      "dialog_node": "node_1_1542641364486",
+      "previous_sibling": "node_11_1542634495368"
+    },
+    {
+      "type": "slot",
+      "parent": "node_1_1542634125471",
+      "variable": "$boissons",
+      "dialog_node": "slot_2_1542634191836",
+      "previous_sibling": "node_1_1542641364486"
+    },
+    {
+      "type": "standard",
+      "title": "Validation",
+      "output": {},
+      "parent": "node_1_1542634125471",
+      "metadata": {
+        "_customization": {
+          "mcr": true
+        }
+      },
+      "conditions": "@Validation",
+      "dialog_node": "node_11_1542634495368",
+      "digress_out": "allow_all"
+    },
+    {
+      "type": "standard",
+      "title": "Tout le reste",
+      "output": {
+        "text": {
+          "values": [
+            "Je n'ai pas compris. Vous pouvez essayer de reformuler.",
+            "Pouvez-vous dire cela autrement ? Je ne comprends pas.",
+            "Je n'ai pas compris ce que vous voulez dire."
+          ],
+          "selection_policy": "sequential"
+        }
+      },
+      "metadata": {},
+      "conditions": "anything_else",
+      "dialog_node": "Tout le reste",
+      "previous_sibling": "node_2_1542659867822"
+    },
+    {
+      "type": "frame",
+      "title": "commande-boisson",
+      "output": {
+        "text": {
+          "values": [
+            "Ok, j'ai donc une $number $boissons pour vous, $Livraison ! Confirmez-vous ?",
+            "Parfait, 'ai donc une $number $boissons pour vous, $Livraison ! Cela vous va ? "
+          ],
+          "selection_policy": "sequential"
+        }
+      },
+      "metadata": {
+        "fallback": "leave"
+      },
+      "conditions": "#commande-boisson",
+      "digress_in": "does_not_return",
+      "dialog_node": "node_1_1542634125471",
+      "digress_out": "allow_all",
+      "previous_sibling": "Bienvenue",
+      "digress_out_slots": "allow_returning"
+    },
+    {
+      "type": "standard",
+      "title": "Localisation",
+      "output": {
+        "text": {
+          "values": [
+            "L'adresse du Coffee Bar à @Ville est 17, avenue de l'Europe.",
+            "Vous pouvez nous trouver à @Ville au 17, avenue de l'Europe."
+          ],
+          "selection_policy": "sequential"
+        }
+      },
+      "metadata": {},
+      "conditions": "#recherche_magasin",
+      "dialog_node": "node_22_1542634893934",
+      "previous_sibling": "node_15_1542634606780"
+    },
+    {
+      "type": "standard",
+      "title": "Liste des produits",
+      "output": {
+        "text": {
+          "values": [
+            "Nous avons à la carte Espresso,  Latte, Mocha, Cappuccino et des thés à la Menthe et Ceylan. Vous pouvez venir chercher les articles ou vous les faire livrer.",
+            "Nous proposons Espresso,  Latte, Mocha, Cappuccino et des thés à la Menthe et Ceylan en livraison ou sur place."
+          ],
+          "selection_policy": "sequential"
+        }
+      },
+      "metadata": {},
+      "conditions": "#voir-produits",
+      "dialog_node": "node_23_1542636662441",
+      "previous_sibling": "node_22_1542634893934"
+    },
+    {
+      "type": "standard",
+      "title": "Aide",
+      "output": {
+        "text": {
+          "values": [
+            "Je peux vous aider à commander un verre dans mon café. Il suffit de dire commander un café pour commencer!"
+          ],
+          "selection_policy": "sequential"
+        }
+      },
+      "metadata": {},
+      "conditions": "#Aide",
+      "digress_in": "returns",
+      "dialog_node": "node_2_1542659867822",
+      "digress_out": "allow_all",
+      "previous_sibling": "node_23_1542636662441"
+    },
+    {
+      "type": "standard",
+      "title": "Prix",
+      "output": {},
+      "metadata": {
+        "_customization": {
+          "mcr": true
+        }
+      },
+      "conditions": "#prix && @boissons",
+      "digress_in": "does_not_return",
+      "dialog_node": "node_15_1542634606780",
+      "digress_out": "allow_all",
+      "previous_sibling": "node_1_1542634125471"
+    },
+    {
+      "type": "standard",
+      "title": "Bienvenue",
+      "output": {
+        "text": {
+          "values": [
+            "Bonjour, comment puis-je vous aider ?"
+          ],
+          "selection_policy": "sequential"
+        }
+      },
+      "metadata": {},
+      "conditions": "welcome",
+      "dialog_node": "Bienvenue"
+    }
+  ],
+  "workspace_id": "fdb550e4-e511-4730-bda7-e8b41538c260",
+  "counterexamples": [],
+  "learning_opt_out": false,
+  "status": "Available"
+}
