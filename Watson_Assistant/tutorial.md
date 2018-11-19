@@ -112,7 +112,8 @@ Arborescence du dialogue :
 Vous avez fini et vous voulez tester d'autres fonctionnalités...
 
 ### Help - IBM Cloud Functions
-
+Watson Assistant permet de faire des appels de programmation à des applications ou des services externes et renvoyer un résultat dans le cadre du traitement qui se produit au sein d'un échange de dialogue.
+Dans cette exemple, nous allons exécuter un appel pour recuperer le prix de la commande.
 
 ### Help - Digressions
 Sometimes, you will want an intent to be handled no matter where the user is in their flow. Think of Digressions as a global 'manage handlers': they allow you to respond to an intent even if a user is in the middle of a process flow, and then it allows them to return to their prior flow. If your user wants some help talking to the bot anywhere in your bot, this is a good intent to have digressions enabled.

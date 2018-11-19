@@ -29,7 +29,7 @@ Listes des articles:
 - Menthe : 2.5€
 - Ceylan : 3 €
 
-La livraison est facturé 5€.
+La livraison est facturé 5€ et 1 euros sur place.
 
 Merci de votre aide pour ce projet.
 
@@ -37,20 +37,20 @@ BONNE CHANCE
 
 # Accélérateurs / Aide
 
-- Photos des produits: répertoire data/pictures
 - Regular Expression (REGEX): 
     - Téléphone Mobile:  ^(\\\\+33|0|0033)[0-9]{9}$
     - Regex carte de fidélité :
 
-## Fichiers : 
+# Fichiers : 
 Liste des intentions : [intents_csv] (https://github.com/vperrinfr/Watson_Academy/blob/master/Watson_Assistant/data/Intents.csv)
 
 Liste des entités : [entities_csv] (https://github.com/vperrinfr/Watson_Academy/blob/master/Watson_Assistant/data/Entities.csv)
 
-## Tutorial - Solution:
+# Tutorial - Solution:
 
 - [Tutorial](https://github.com/vperrinfr/Watson_Academy/blob/master/Watson_Assistant/tutorial.md)
-- [Solution](https://github.com/vperrinfr/Watson_Academy/blob/master/Watson_Assistant/data/Coffee_Shop.json
+- [Solution](https://github.com/vperrinfr/Watson_Academy/blob/master/Watson_Assistant/data/Coffee_Shop.json)
+- [Solution avancée](https://github.com/vperrinfr/Watson_Academy/blob/master/Watson_Assistant/data/Coffee_Shop.json)
 
 
 
