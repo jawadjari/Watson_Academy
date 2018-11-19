@@ -173,6 +173,8 @@ Je peux vous aider à commander un verre dans mon café. Il suffit de dire comma
 
 ### Help - Contenu général
 
+Les catalogues vous permettent d'ajouter facilement des intentions courantes à votre espace de travail de service Watson Assistant.
+
 1. Cliquez sur `Content Catalog` dans la barre supérieur
 2. Cliquez sur le terme `Général` pour voir les différentes intentions pré-entrainées de cette catégorie.
 3. Cliquez sur `Add to skill` dans le coin supérieur droit de l'écran. L'ensemble des 10 intentions ont été rajouté à la liste de vos intentions.
