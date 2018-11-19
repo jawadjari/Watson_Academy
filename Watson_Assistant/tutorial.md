@@ -110,6 +110,17 @@ Arborescence du dialogue :
 
 Bravo, votre premier chatbot est en oeuvre :clap: :clap:
 
+## Déploiement
+
+1. Cliquez sur la flèche en haud à gauche ou cliquez sur `Skills` dans le fil d'ariane
+2. Cliquez sur `Assistant` 
+3. Cliquez sur `Create New`
+4. Saississez le nom de votre assistant, puis cliquez sur `Create`
+5. Cliquez sur `Add Dialog Skill`
+6. Cliquez sur `Add existing skill` puis choisissez votre skill
+7. Cliquez sur `Preview Link`, puis sur l'url pour tester votre bot dans une widget Web
+8. Vous pouvez aussi l'integrer dans Facebook Messenger, Slack ou dans une application spécifique.
+
 ## Pour aller plus loin...
 Vous avez fini et vous voulez tester d'autres fonctionnalités...
 
