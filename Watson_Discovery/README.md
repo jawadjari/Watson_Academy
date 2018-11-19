@@ -21,4 +21,12 @@
 
 ### Intégration avec Watson Assistant
 
-lorem ipsum
+1. Retourner sur l'interface de configuration de Watson Assistant
+2. Aller dans l'onglet `Dialog`, puis sur le noeud `Tout le reste`
+3. Remplacer le contenu via le JSON Editor par le contenu ci-dessous:
+```
+
+```
+4. Créer un sous-noeud et ajouter le texte suivant
+
+5. Ensuite tester la phrase suivante : "____________". Watson Assistant ne reconnaissant pas l'intention, Watson Discovery est appelé pour chercher la réponse la plus approprié à cette question.
