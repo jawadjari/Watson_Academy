@@ -43,5 +43,20 @@ BONNE CHANCE
     - Regex carte de fidélité :
 
 ## Fichiers : 
-Liste des intentions : intents_csv
-Liste des entités : entities_csv
+Liste des intentions : [intents_csv] (https://github.com/vperrinfr/Watson_Academy/blob/master/Watson_Assistant/data/Intents.csv)
+
+Liste des entités : [entities_csv] (https://github.com/vperrinfr/Watson_Academy/blob/master/Watson_Assistant/data/Entities.csv)
+
+## Tutorial - Solution:
+
+- [Tutorial](https://github.com/vperrinfr/Watson_Academy/blob/master/Watson_Assistant/tutorial.md)
+- [Solution](https://github.com/vperrinfr/Watson_Academy/blob/master/Watson_Assistant/data/Coffee_Shop.json
+
+
+
+
+
+
+
+
+
