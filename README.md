@@ -5,9 +5,13 @@
 
 Le service IBM Watson™ Assistant vous permet de créer une solution qui comprend les entrées en langage naturel et utilise l'apprentissage automatique pour répondre aux clients en simulant une conversion entre des humains.
 
-Lien vers le workshop
+- Lien vers le workshop : [ici](https://github.com/vperrinfr/Watson_Academy/blob/master/Watson_Assistant/README.md)
  
 ## Workshop Watson Discovery
 
-Lien vers le workshop
+IBM Watson™ Discovery permet de créer rapidement des applications d'exploration cognitive basées sur le cloud qui déverrouillent les connaissances exploitables masquées dans des données non structurées, y compris vos propres données exclusives, ainsi que les données publiques et tierces.
+
+- Lien vers le workshop : [ici](https://github.com/vperrinfr/Watson_Academy/blob/master/Watson_Discovery/README.md)
+
+Bon workshop 
 

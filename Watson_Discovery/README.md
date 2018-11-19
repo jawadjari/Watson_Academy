@@ -3,7 +3,7 @@
 1. Créer un service Watson Discovery depuis l'interface IBM Cloud
 2. Lancer l'outil
 3. Création d'une collection, via l'upload des documents
-4. Charger les 9 documents
+4. Charger les 9 documents contenu dans le répertoire data [lien](https://github.com/vperrinfr/Watson_Academy/tree/master/Watson_Discovery/data)
 5. Passer un peu de temps à analyser l'écran d'accueil, les renseignements découverts par Watson dans vos documents enrichis. 
 - General sentiments affiche la répartition en pourcentage des documents marqués comme positifs, neutres et négatifs découverts par l'enrichissement Sentiment Analysis. 
 - Top entities affiche les personnes, les lieux et les organisations découverts dans vos documents par l'enrichissement Entity Extraction. 
@@ -20,3 +20,5 @@
 ## Pour aller plus loin
 
 ### Intégration avec Watson Assistant
+
+lorem ipsum
