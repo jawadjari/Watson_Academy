@@ -2,6 +2,536 @@
   "name": "Coffee_Shop",
   "intents": [
     {
+      "intent": "General_Negative_Feedback",
+      "examples": [
+        {
+          "text": "Va te faire foutre!"
+        },
+        {
+          "text": "Arrête de m'énerver!"
+        },
+        {
+          "text": "Ce n'est pas vrai!"
+        },
+        {
+          "text": "Connard!"
+        },
+        {
+          "text": "Espece de boîte de conserve!"
+        },
+        {
+          "text": "Idiot!"
+        },
+        {
+          "text": "Je te déteste."
+        },
+        {
+          "text": "Je veux parler à une de personne vivante!"
+        },
+        {
+          "text": "Programme stupide !"
+        },
+        {
+          "text": "Putain de robot!"
+        },
+        {
+          "text": "Tais-toi!"
+        },
+        {
+          "text": "T'es bizarre."
+        },
+        {
+          "text": "Tu es bête!"
+        },
+        {
+          "text": "Tu es chiant!"
+        },
+        {
+          "text": "Tu es inutile!"
+        },
+        {
+          "text": "Tu es nul."
+        },
+        {
+          "text": "Tu me fais chier!"
+        },
+        {
+          "text": "Tu me saoule!"
+        },
+        {
+          "text": "Tu m'énerves!"
+        },
+        {
+          "text": "Tu ne sais rien faire!"
+        }
+      ],
+      "description": "Exprimer des commentaires défavorables"
+    },
+    {
+      "intent": "General_Greetings",
+      "examples": [
+        {
+          "text": "Comment ça va ce soir?"
+        },
+        {
+          "text": "Allez, commençons !"
+        },
+        {
+          "text": "Bonjour , c'est votre support informatique , qu'est ce que je peux faire pour vous ?"
+        },
+        {
+          "text": "Bonjour, qui êtes-vous?"
+        },
+        {
+          "text": "Bonjour, quoi de neuf ?"
+        },
+        {
+          "text": "Commencez dès le début s'il vous plaît !"
+        },
+        {
+          "text": "Comment ça se passe aujourd'hui ?"
+        },
+        {
+          "text": "Comment se passe votre journée ?"
+        },
+        {
+          "text": "Comment tu te sens?"
+        },
+        {
+          "text": "Comment va tout le monde ?"
+        },
+        {
+          "text": "Est-ce que les gens sont gentils avec vous?"
+        },
+        {
+          "text": "Est-ce que vous passez une bonne journée?"
+        },
+        {
+          "text": "J'aime parler. Toi aussi ?"
+        },
+        {
+          "text": "J'ai pensé que je pourrais juste te dire bonjour !"
+        },
+        {
+          "text": "Je suis heureux de te parler pour la première fois !"
+        },
+        {
+          "text": "Je voudrais commencer."
+        },
+        {
+          "text": "âllo, âllo !"
+        },
+        {
+          "text": "Puis-je te poser des questions?"
+        },
+        {
+          "text": "Salut, le conseiller !"
+        },
+        {
+          "text": "Tu vas bien ?"
+        }
+      ],
+      "description": "Saluez le bot"
+    },
+    {
+      "intent": "General_Security_Assurance",
+      "examples": [],
+      "description": "Exprimer ses inquiétudes concernant la sécurité du bot"
+    },
+    {
+      "intent": "General_Positive_Feedback",
+      "examples": [
+        {
+          "text": "Vous êtes formidable! Merci!"
+        },
+        {
+          "text": "Tu bosses bien!"
+        },
+        {
+          "text": "Tu es adorable!"
+        },
+        {
+          "text": "Je suis vraiment surpris par ton intelligence!"
+        },
+        {
+          "text": "Tu es bon!"
+        },
+        {
+          "text": "Tu es drôle!"
+        },
+        {
+          "text": "Tu es gentil!"
+        },
+        {
+          "text": "Tu es le meilleur!"
+        },
+        {
+          "text": "Tu es plutôt doué!"
+        },
+        {
+          "text": "Tu es plutôt intelligent!"
+        },
+        {
+          "text": "Tu es si intelligent, c'est incroyable!"
+        },
+        {
+          "text": "Tu es si sage!"
+        },
+        {
+          "text": "Tu es tellement amusant!"
+        },
+        {
+          "text": "Tu es vachement cool!"
+        },
+        {
+          "text": "Tu es vraiment cool!"
+        },
+        {
+          "text": "Tu te débrouilles plutôt bien!"
+        },
+        {
+          "text": "Vous êtes formidable!"
+        },
+        {
+          "text": "Vous êtes vraiment utile."
+        },
+        {
+          "text": "Vous êtes génial!"
+        },
+        {
+          "text": "Vous êtes un sympa!"
+        }
+      ],
+      "description": "Exprimer un sentiment positif ou de la gratitude"
+    },
+    {
+      "intent": "General_About_You",
+      "examples": [
+        {
+          "text": "Pouvez-vous me permettre de réserver ou commander des billets ?"
+        },
+        {
+          "text": "Avez vous un ou des surnoms?"
+        },
+        {
+          "text": "Abus de chatbot, est-ce possible ?"
+        },
+        {
+          "text": "Avez-vous un nom de famille?"
+        },
+        {
+          "text": "Écris-tu le portugais ?"
+        },
+        {
+          "text": "Depuis combien de temps effectuez-vous cette fonction?"
+        },
+        {
+          "text": "Est-ce que l'agent virtuel est toujours disponible ?"
+        },
+        {
+          "text": "Es-tu intelligent ?"
+        },
+        {
+          "text": "Etes-vous adaptés pour le service et la relation client ?"
+        },
+        {
+          "text": "Les chatbots, que sont-ils exactement capables de faire ?"
+        },
+        {
+          "text": "Pouvez-vous m'en dire plus sur vous?"
+        },
+        {
+          "text": "Pouvez-vous offrir un support aux utilisateurs internes?"
+        },
+        {
+          "text": "Présentez-vous !"
+        },
+        {
+          "text": "Puis-je demander des conseils dans des questions juridiques ?"
+        },
+        {
+          "text": "Quelle est la technologie utilisée par les agents virtuels ?"
+        },
+        {
+          "text": "Quels sont vos centres d'intérêt ?"
+        },
+        {
+          "text": "Qu'est-ce que tu n'aimes pas?"
+        },
+        {
+          "text": "Salut, parles-tu l'espagnol ?"
+        },
+        {
+          "text": "Êtes-vous un homme ou une femme ou un robot?"
+        }
+      ],
+      "description": "Demander des attributs génériques personnels"
+    },
+    {
+      "intent": "General_Jokes",
+      "examples": [
+        {
+          "text": "Raconte moi une blague !"
+        },
+        {
+          "text": "Aimes-tu raconter des blagues?"
+        },
+        {
+          "text": "Aimes-tu rigoler?"
+        },
+        {
+          "text": "Quelle est ta blague préférée?"
+        },
+        {
+          "text": "Quelle blague tu peux me raconter ?"
+        },
+        {
+          "text": "Pouvez-vous me dire une blague?"
+        },
+        {
+          "text": "Peux-tu raconter une blague?"
+        },
+        {
+          "text": "Peux-tu dire un truc drôle?"
+        },
+        {
+          "text": "Peux-tu chanter pour moi?"
+        },
+        {
+          "text": "Fais-moi rire!"
+        },
+        {
+          "text": "Dis-moi une autre blague!"
+        },
+        {
+          "text": "Dis-moi quelque chose de drôle!"
+        },
+        {
+          "text": "Connais-tu une bonne blague salace?"
+        },
+        {
+          "text": "Connais-tu une blague?"
+        },
+        {
+          "text": "Connaissez-vous des blagues?"
+        },
+        {
+          "text": "Que pouvez-vous faire d'autre pour m'amuser?"
+        },
+        {
+          "text": "Amusons-nous!"
+        },
+        {
+          "text": "Amuse-moi!"
+        },
+        {
+          "text": "Tu connais des jeux?"
+        },
+        {
+          "text": "Surprends-moi avec quelque chose de drôle !"
+        }
+      ],
+      "description": "Demander une blague"
+    },
+    {
+      "intent": "General_Ending",
+      "examples": [
+        {
+          "text": "C'était sympa de bavarder avec toi!"
+        },
+        {
+          "text": "D'accord merci. Au revoir!"
+        },
+        {
+          "text": "Donc, je vous remercie beaucoup de votre aide. Je vous souhaite une bonne journée !"
+        },
+        {
+          "text": "J'ai besoin d'une pause, au revoir !"
+        },
+        {
+          "text": "Je dois partir maintenant."
+        },
+        {
+          "text": "Je m'en vais maintenant."
+        },
+        {
+          "text": "Je n'ai plus de questions."
+        },
+        {
+          "text": "Je pars maintenant, à plus !"
+        },
+        {
+          "text": "Je rediscuterai avec vous plus tard."
+        },
+        {
+          "text": "Je vais te parler plus tard !"
+        },
+        {
+          "text": "Je vais vous reparler bientôt."
+        },
+        {
+          "text": "Je voudrais arrêter là."
+        },
+        {
+          "text": "Merci beaucoup, on se reparle plus tard."
+        },
+        {
+          "text": "Nous allos rediscuter bientôt."
+        },
+        {
+          "text": "Ok, c'est tout ce dont j'ai besoin pour l'instant."
+        },
+        {
+          "text": "OK, merci. Au revoir !"
+        },
+        {
+          "text": "Passe une bonne journée !"
+        },
+        {
+          "text": "Pouvons-nous arrêter ?"
+        },
+        {
+          "text": "C'est tout, merci."
+        },
+        {
+          "text": "C'était un plaisir de chatter avec vous !"
+        }
+      ],
+      "description": "Terminez la conversation"
+    },
+    {
+      "intent": "General_Connect_to_Agent",
+      "examples": [
+        {
+          "text": "Puis-je parler à un représentant du service humain maintenant ?"
+        },
+        {
+          "text": "Bonjour pourriez-vous me mettre en relation avec un agent en ligne?"
+        },
+        {
+          "text": "Bon, maintenant je veux parler à un agent à propos de certains frais."
+        },
+        {
+          "text": "Existe-t-il un numéro de service client qui je peux utiliser et parler à  un agent directement ?"
+        },
+        {
+          "text": "Existe-t-il un numéro que je peux composer pour parler à opérateur en direct ?"
+        },
+        {
+          "text": "J'aimerais parler à un agent humain, s'il vous plaît."
+        },
+        {
+          "text": "Je dois parler à une personne réelle plutôt qu'un système de réponse automatisé, s'il vous plaît."
+        },
+        {
+          "text": "Je pense qu'il faut me connecter avec un opérateur."
+        },
+        {
+          "text": "Je souhaite etre mis en relation avec un agent."
+        },
+        {
+          "text": "Je souhaite parler à un agent humain du service client."
+        },
+        {
+          "text": "Je veux parler au directeur ! Votre agent était inutile !"
+        },
+        {
+          "text": "Je veux parler avec un représentant, s'il vous plaît."
+        },
+        {
+          "text": "Je voudrais parler avec un agent en direct, s'il vous plaît."
+        },
+        {
+          "text": "Laissez-moi parler à votre patron maintenant !"
+        },
+        {
+          "text": "Personne ne répond au téléphone !"
+        },
+        {
+          "text": "Pouvez-vous me mettre en contact avec un agent, s'il vous plaît ? Ma conversation a été coupée."
+        },
+        {
+          "text": "Pouvez-vous, s'il vous plaît, diriger mon appel vers un agent humain? Je voudrais parler directement avec un être humain."
+        },
+        {
+          "text": "Puis-je parler à un agent à propos de mon compte ?"
+        },
+        {
+          "text": "Veuillez me connecter à un gestionnaire."
+        },
+        {
+          "text": "Y a-t-il un numéro que je peux composer et rejoindre une personne réelle qui peut m'aider?"
+        }
+      ],
+      "description": "Demander un agent humain"
+    },
+    {
+      "intent": "General_Human_or_Bot",
+      "examples": [
+        {
+          "text": "Vous êtes quoi, un ordinateur?"
+        },
+        {
+          "text": "Êtes-vous un humain ou un robot?"
+        },
+        {
+          "text": "Êtes-vous un homme ou une femme?"
+        },
+        {
+          "text": "Êtes-vous réel?"
+        },
+        {
+          "text": "Qui es-tu vraiment?"
+        },
+        {
+          "text": "Pouvez-vous être honnête avec moi?"
+        },
+        {
+          "text": "Pouvez-vous me connecter à une personne en direct?"
+        },
+        {
+          "text": "Pourrai-je parler un être humain s'il vous plaît ?"
+        },
+        {
+          "text": "Je parle avec qui?"
+        },
+        {
+          "text": "Est-ce que t'es un ordinateur?"
+        },
+        {
+          "text": "Est-ce que je parle à Watson?"
+        },
+        {
+          "text": "Est-ce que je parle à une personne ou suis-je en train de parler à une IA?"
+        },
+        {
+          "text": "Est-ce que je parle à un Bot?"
+        },
+        {
+          "text": "Est-ce que je discute avec un humain?"
+        },
+        {
+          "text": "Dites-moi, êtes-vous un humain ou non?"
+        },
+        {
+          "text": "Dites-moi, qui êtes-vous?"
+        },
+        {
+          "text": "Dis-moi la vérité, qui est-ce que tu es?"
+        },
+        {
+          "text": "Connecte-moi avec une personne réelle."
+        },
+        {
+          "text": "Comment puis-je parler à Watson?"
+        },
+        {
+          "text": "Comment pouvez-vous prouver que vous êtes un humain?"
+        }
+      ],
+      "description": "Demandez si vous parlez à un humain ou à un bot"
+    },
+    {
       "intent": "commande-boisson",
       "examples": [
         {
@@ -29,10 +559,10 @@
       "intent": "Aide",
       "examples": [
         {
-          "text": "Aide"
+          "text": "Besoin d'aide"
         },
         {
-          "text": "Besoin d'aide"
+          "text": "Aide"
         }
       ],
       "description": ""
@@ -41,13 +571,13 @@
       "intent": "recherche_magasin",
       "examples": [
         {
-          "text": "Où se situe le Coffee Shop à Paris ?"
-        },
-        {
           "text": "J'habite à Bordeaux, je peux vous trouver où ?"
         },
         {
           "text": "Quelle est votre adresse à Lyon ?"
+        },
+        {
+          "text": "Où se situe le Coffee Shop à Paris ?"
         }
       ],
       "description": "Demande de localisation d'un magasin"
@@ -59,10 +589,10 @@
           "text": "Combien coûte un espresso ?"
         },
         {
-          "text": "Quel est le prix d'un latte ?"
+          "text": "Combien d'euros pour un thé à la Menthe ?"
         },
         {
-          "text": "Combien d'euros pour un thé à la Menthe ?"
+          "text": "Quel est le prix d'un latte ?"
         }
       ],
       "description": "Demande du prix d'une boisson"
@@ -71,22 +601,88 @@
       "intent": "voir-produits",
       "examples": [
         {
-          "text": "Qu'avez-vous comme boisson ?"
+          "text": "Pouvez-vous me montrer la carte ?"
+        },
+        {
+          "text": "Je peux boire quoi ?"
         },
         {
           "text": "J'ai soif, qu'avez -vous à la carte ?"
         },
         {
-          "text": "Pouvez-vous me montrer la carte ?"
+          "text": "Qu'avez-vous comme boisson ?"
         },
         {
           "text": "Quelles boissons proposez-vous ?"
-        },
-        {
-          "text": "Je peux boire quoi ?"
         }
       ],
       "description": "Lister les produits à la carte"
+    },
+    {
+      "intent": "General_Agent_Capabilities",
+      "examples": [
+        {
+          "text": "Avez-vous des capacités d'apprentissage ?"
+        },
+        {
+          "text": "Ai-je besoin de l'espace de travail du service de conversation pour ajouter une fonctionnalité personnalisée?"
+        },
+        {
+          "text": "Puis-je relier mon espace de travail avec un agent virtuel?"
+        },
+        {
+          "text": "Puis-je utiliser la fenêtre de prévisualisation pour tester le déroulement de ma conversation ?"
+        },
+        {
+          "text": "Savez-vous faire la traduction ?"
+        },
+        {
+          "text": "Puis-je voir 4 questions les plus fréquentes?"
+        },
+        {
+          "text": "Y a-t-il d'autre domaines avec lesquels aide l'Agent Virtuel?"
+        },
+        {
+          "text": "Quelles sont les options avec lesquelles vous pouvez m'aider?"
+        },
+        {
+          "text": "Quels sont les options que je peux avoir de plus en utlisant un agent virtuel ?"
+        },
+        {
+          "text": "Qu'est-ce que l'option Désactiver tout ?"
+        },
+        {
+          "text": "Puis-je récupérer les interactions dans un agent virtuel ?"
+        },
+        {
+          "text": "Pouvez-vous lister les possibilités de la rubrique d'aide?"
+        },
+        {
+          "text": "Puis-je avoir une liste de sujets disponibles auxquels vous pouvez m'aider?"
+        },
+        {
+          "text": "Pourquoi est-ce qu'il n'y a pas d'option de fermer la session dans 'Agent Virtuel'?"
+        },
+        {
+          "text": "J'ai besoin de votre aide pour la création de l'agent virtuel."
+        },
+        {
+          "text": "Dans quelles autres questions pouvez-vous m'aider?"
+        },
+        {
+          "text": "Comment puis-je configurer mes préférences dans l'Agent Virtuel?"
+        },
+        {
+          "text": "Bonjour. Quelle sorte de choses pouvez-vous faire pour moi?"
+        },
+        {
+          "text": "Bonjour, pouvez-vous énumérer les domaines dans lequels vous pouvez fournir de l'aide?"
+        },
+        {
+          "text": "Avez-vous des limites ?"
+        }
+      ],
+      "description": "Demander des capacités du bot"
     }
   ],
   "entities": [
@@ -358,7 +954,7 @@
       },
       "parent": "node_15_1542634606780",
       "metadata": {},
-      "conditions": "@boissons:espresso",
+      "conditions": "@boissons:Expresso",
       "dialog_node": "node_16_1542634621801"
     },
     {
@@ -456,7 +1052,7 @@
       "output": {
         "text": {
           "values": [
-            "La commande est faite, cela vous coutera $extraction.prix . Merci pour votre commande."
+            "La commande est faite, cela vous coutera $extraction.prix €. Merci pour votre commande."
           ],
           "selection_policy": "sequential"
         }
