@@ -28,6 +28,10 @@ Nous allons créer un chatbot qui permet la prise de commande de café ou thé e
   - un cappuccino serait apprécié
   - Un mocha s'il vous plait
 6. Ouvrir le panneau `Try it Out` en cliquant sur la bulle en haut à droite. Cela vous permet de tester la réaction de votre bot
+
+![Try_it Panel](https://github.com/vperrinfr/Watson_Academy/blob/master/pictures/Try_It.png)
+
+
 7. Attendez que le bot termine son entraînement, puis tapez `Pourrais-je commander un expresso`. Le bot doit classifier cette phrase `commande-boisson`. Même si vous n’avez pas appris l’intention sur cette phrase exacte, Watson peut toujours la comprendre.
 8. Ajoutez quelques intentions supplémentaires pour couvrir d'autres demandes. Essayez de créer les intentions suivantes et d’ajouter quelques exemples à chacune d’elles
   - #voir-produits (Le client veut connaitre les produits disponibles)
@@ -35,7 +39,7 @@ Nous allons créer un chatbot qui permet la prise de commande de café ou thé e
   - #recherche_magasin (Le Client cherche la localisation des magasins)
   
 Voila les intentions finies:
-![finished intents](https://github.com/desmarchris/think-lab/blob/master/pictures/finished-intents.png)
+![finished intents](https://github.com/vperrinfr/Watson_Academy/blob/master/pictures/Liste_Intent.png)
 
 ## Création des Entities
 1. Cliquez sur l'onglet `Entities`
@@ -48,12 +52,17 @@ Voila les intentions finies:
   - Menthe
   - Mocha
   - Ceylan
+
+Voici l'entité `@boisson` finalisée:
+![finished intents](https://github.com/vperrinfr/Watson_Academy/blob/master/pictures/Entite_boisson.png)
+
 6. Quittez la page, et cliquez sur `System entities` dans l'onglet `Entities` 
 7. Activez`@sys-number` pour permettre la détection des nombres.
 
-Voici l'entité `@boisson` finalisée:
-![finished entity](https://github.com/desmarchris/think-lab/blob/master/pictures/finished-entity.png)
+Voici l'entité système finalisée:
+![finished intents](https://github.com/vperrinfr/Watson_Academy/blob/master/pictures/System_Entities.png)
 
+8. Créez d'autres entités.
 9. Cliquez `Add entity` and add the name `Modèle_REGEX`
 10. Désactivez le `Fuzzy Matching`
 11. Saississez `Téléphone`comme nom
@@ -61,7 +70,12 @@ Voici l'entité `@boisson` finalisée:
 12. Copiez l'expression régulière pour détecter/valider un numéro de téléphone : ^(\\\\+33|0|0033)[0-9]{9}$
 13. Tester la reconnaissance d'un numéro de téléphone dans le panneau `Try it out`
 14. Cliquez `Add entity` and add the name `Livraison`
-14. Cliquez `Add entity` and add the name `Validation` 
+14. Cliquez `Add entity` and add the name `Validation` (Oui, Non)
+15. Cliquez `Add entity` and add the name `Ville` (Paris, Bordeaux, Lille...), la 
+
+Voici la liste des entités finalisée:
+![finished intents](https://github.com/vperrinfr/Watson_Academy/blob/master/pictures/Liste_Entities.png)
+
 
 ## Construction du dialogue
 1. Cliquez sur l'onglet `Dialog`
@@ -76,7 +90,7 @@ Voici l'entité `@boisson` finalisée:
 14. Cliquez `Add slot`, et ajoutez une condition "prompt for" `@sys-number` avec la question "Combien de tasses de $boissons souhaitez-vous ?"
 (Note: La syntaxe `$variable` permet l'accès au contenu du variable.)
 14. Cliquez `Add slot`, et ajoutez une condition "prompt for" `@Livraison` avec la question "A emporter ou sur place ?"
-15. Ajoutez la réponse "Ok, j'ai donc une $number $boissons pour vous, $Livraison !  "
+15. Ajoutez la réponse "Ok, j'ai donc une $number $boissons pour vous, $Livraison ! Cela vous va ?  "
 16. Créez un noeud fils, avec le nom `validation`
 17. Dans le champ `If assistant recognizes`, saissisez `@Validation`. Ce noeud attend une entité de validation.
 18. En haut à droite du noeud, cliquez sur `Customize`
@@ -90,25 +104,15 @@ Voici l'entité `@boisson` finalisée:
 26. Dans le champ `If assistant recognizes`, ajouter `@boissons:Latte`, saissisez la réponse dans le champ `Respond with`
 27. Rajoutez d'autres conditions comme `@boissons:espresso`, `@boissons:capuccino`
 28. Vous pouvez ensuite faire de même pour la demande de localisation
---------------------------------------------------------
 
-Finished dialog tree with `Order Drink` open:
-![finished dialog](https://github.com/desmarchris/think-lab/blob/master/pictures/finished-dialog.png)
+Arborescence du dialogue :
+![finished dialog](https://github.com/vperrinfr/Watson_Academy/blob/master/pictures/dialog.png)
 
 ## Pour aller plus loin...
 Vous avez fini et vous voulez tester d'autres fonctionnalités...
 
-### Resetting context
-If your user orders a drink and completes the flow, and they try to make another order, the values found from the first flow will still be there so they will not be able to order something else. To fix this, we need to clear the context after a successful order so the values are not stored for the next order.
-1. Create a node above the Slots node `Order Drink` called `Order Drink - Clear Context`
-2. Set the condition to `#order-drink`
-3. In the response section, click on the three button menu on the right and click on `Open context editor`
-4. Fill in both of the variables (`drink` and `number`) and set the values to `null`
-5. Click on the three dot menu on the right side of original Slots node `Order Drink`, and select `Move`. Then, click the new context clearing node and move to `As Child Node` (So, the parent node is the context clearing node, and the slots node is the child)
-6. Go to the section called `And finally` at the bottom of the context clearing node. Select `Jump to` and click the slots node, then `If bot recognizes condition`
-7. Change the condition of the slots node from `#order-drink` to `true` (Use this condition if you want the node to always fire)
-8. Try it out! Without clearing the try it out panel, order a drink. Once finished, try ordering another drink and it should prompt you for the two needed variables again. Here's what the finished context clearing node will look like:
-![clear context](https://github.com/desmarchris/think-lab/blob/master/pictures/clear-context.png)
+### Help - IBM Cloud Functions
+
 
 ### Help - Digressions
 Sometimes, you will want an intent to be handled no matter where the user is in their flow. Think of Digressions as a global 'manage handlers': they allow you to respond to an intent even if a user is in the middle of a process flow, and then it allows them to return to their prior flow. If your user wants some help talking to the bot anywhere in your bot, this is a good intent to have digressions enabled.
