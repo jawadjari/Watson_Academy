@@ -10,8 +10,8 @@
 - **Content hierarchy** affiche les taxonomies hiérarchiques découvertes dans vos documents par l'enrichissement Category Classification. 
 - **Related concepts** affiche les concepts découverts dans vos documents par l'enrichissement Concept Tagging. 
 6. Tester une requête avancée avec l'outil
--   Pour rechercher les résultats comportant des entités nommées "indonésie" :  Cliquez sur Field et sélectionnez *enriched_text.entities.text*. Sélectionnez contains pour Operator et indonésie pour Value. La requête *enriched_text.entities.text:IBM* s'affiche dans le générateur de requête visuelle. Cliquez sur `Run Query`. La requête renvoie 4 résultats.  
-- Pour rechercher les résultats comportant des entités nommées "caféine" :  Cliquez sur Field et sélectionnez *enriched_text.entities.text*. Sélectionnez contains pour Operator et caféine pour Value. La requête *enriched_text.entities.text:watson* s'affiche dans le générateur de requête visuelle. Cliquez sur `Run Query`. La requête renvoie 4 résultats. 
+-   Pour rechercher les résultats comportant des entités nommées "indonésie" :  Cliquez sur Field et sélectionnez *enriched_text.entities.text*. Sélectionnez contains pour Operator et indonésie pour Value. La requête *enriched_text.entities.text:Indonésie* s'affiche dans le générateur de requête visuelle. Cliquez sur `Run Query`. La requête renvoie 4 résultats.  
+- Pour rechercher les résultats comportant des entités nommées "caféine" :  Cliquez sur Field et sélectionnez *enriched_text.entities.text*. Sélectionnez contains pour Operator et caféine pour Value. La requête *enriched_text.entities.text:caféine* s'affiche dans le générateur de requête visuelle. Cliquez sur `Run Query`. La requête renvoie 4 résultats. 
 - Pour rechercher les résultats comportant à la fois des entités "indonésie" et des entités "caféine" :  Cliquez sur `Run Query`. La requête renvoie 2 résultats.
 
 6. Tester une requête en langage naturel 
