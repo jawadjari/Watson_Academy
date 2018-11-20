@@ -13,5 +13,13 @@ IBM Watson™ Discovery permet de créer rapidement des applications d'explorati
 
 - Lien vers le workshop : [ici](https://github.com/vperrinfr/Watson_Academy/blob/master/Watson_Discovery/README.md)
 
+## Workshop Watson Visual Recognition
+
+Le service IBM Watson™ Visual Recognition utilise des algorithmes d'apprentissage en profondeur pour analyser des images relatives à des scènes, des objets, des visages et d'autres contenus. La réponse inclut des mots clés qui fournissent des informations sur le contenu.
+
+Un ensemble de modèles intégrés fournit des résultats extrêmement précis sans apprentissage. Vous pouvez aussi entraîner des modèles personnalisés à créer des classes spécialisées.
+
+- Lien vers le workshop : [ici](https://github.com/vperrinfr/Watson_Academy/blob/master/Watson_Visual_Recognition/)
+
 Bon workshop 
 
