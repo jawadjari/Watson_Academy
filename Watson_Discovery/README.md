@@ -25,8 +25,39 @@
 2. Aller dans l'onglet `Dialog`, puis sur le noeud `Tout le reste`
 3. Remplacer le contenu via le JSON Editor par le contenu ci-dessous:
 ```
-
+{
+  "context": {
+    "private": {
+      "function_credentials": {
+        "user": "4ba223cc-37a0-43a6-af42-d615ac44ff62",
+        "password": "bwBscazbXrb6jsDyQRJ34GKGTPHhJ7wF6vs9tBezGWxLnK0Jm9vR0vz4vHI8Uhyu"
+      }
+    }
+  },
+  "output": {
+    "text": {
+      "values": [Recherche sur Watson Discovery, veuillez attendre quelques secondes ...],
+      "selection_policy": "sequential"
+    }
+  },
+  "actions": [
+    {
+      "name": "arabenandrasana@fr.ibm.com_dev/actions/mine/CafeThe",
+      "type": "server",
+      "parameters": {
+        "url": “xxxxx,
+        "apikey": “xxxx,
+        "question": "<?input.text?>",
+        "collection_id": “xxx”,
+        "environment_id": “xxx”
+      },
+      "credentials": "$private.function_credentials",
+      "result_variable": "$reponse"
+    }
+  ]
+}
 ```
-4. Créer un sous-noeud et ajouter le texte suivant
-
-5. Ensuite tester la phrase suivante : "____________". Watson Assistant ne reconnaissant pas l'intention, Watson Discovery est appelé pour chercher la réponse la plus approprié à cette question.
+Remplacer les xxx par vos paramètres à trouver dans l'interface de Watson Discovery
+4. Créer un sous-noeud et ajouter le texte suivant $reponse.text
+5. Configurer un Jump To du noeud `Tout le reste`
+5. Ensuite tester la phrase suivante : "Qui a introduit le thé en France ?". Watson Assistant ne reconnaissant pas l'intention, Watson Discovery est appelé pour chercher la réponse la plus approprié à cette question.
