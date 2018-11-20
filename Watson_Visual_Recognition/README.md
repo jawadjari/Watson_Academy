@@ -5,8 +5,8 @@
 1. Retourner sur l'interface de configuration de Watson Assistant
 2. Créez une intention `#image` avec l'exemple "J'ai une image, peux-tu m'aider à reconnaitre le produit ?" 
 3. Créez une entité `@URL` avec un modèle Pattern
-Pattern = ^(http:\/\/www\\.|https:\/\/www\\.|http:\/\/|https:\/\/)?[a-z0-9]+([\\-\\.]{1}[a-z0-9]+)*\\.[a-z]{2,5}(:[0-9]{1,5})?(\\/.*)?$
-2. Créez un noeud pour la détection des images avec le texte "Bien sûr, peux-tu me fournir moi un url ?"
+`^(http:\/\/www\\.|https:\/\/www\\.|http:\/\/|https:\/\/)?[a-z0-9]+([\\-\\.]{1}[a-z0-9]+)*\\.[a-z]{2,5}(:[0-9]{1,5})?(\\/.*)?$`
+2. Créez un noeud pour la détection des images avec le texte "Bien sûr, peux-tu me fournir un url ?"
 3. Créez un sous-noeud avec `@URL` comme condition
 3. Remplacer le contenu via le JSON Editor par le contenu ci-dessous:
 ```
