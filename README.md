@@ -1,5 +1,7 @@
 # Watson_Academy
  Cet espace est dédié à l'événement IBM Watson Academy prévu en France en 2018.
+
+ [WCA_logo](https://github.com/vperrinfr/Watson_Academy/blob/master/pictures/Entite_boisson.png)
  
 ## Workshop Watson Assistant
 
