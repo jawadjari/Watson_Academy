@@ -42,15 +42,15 @@ BONNE CHANCE
     - Regex carte de fidélité : [A-Z]{2}[0-9]{4}
 
 # Fichiers : 
-Liste des intentions : [intents_csv](https://github.com/vperrinfr/Watson_Academy/blob/master/Watson_Assistant/data/Intents.csv)
+Liste des intentions : [intents_csv](https://ibm.box.com/s/lwi6fcj022w09mvcfozs1kyh0u9llq4k)
 
-Liste des entités : [entities_csv](https://github.com/vperrinfr/Watson_Academy/blob/master/Watson_Assistant/data/Entities.csv)
+Liste des entités : [entities_csv](https://ibm.box.com/s/1z2o7xqgppzrpcap3siomwvlqqw8h1xu)
 
 # Tutorial - Solution:
 
 - [Tutorial](https://github.com/vperrinfr/Watson_Academy/blob/master/Watson_Assistant/tutorial.md)
-- [Solution](https://github.com/vperrinfr/Watson_Academy/blob/master/Watson_Assistant/data/Coffee_Shop.json)
-- [Solution avancée](https://github.com/vperrinfr/Watson_Academy/blob/master/Watson_Assistant/data/Coffee_Shop_avancee.json)
+- [Solution](https://ibm.box.com/s/78d7fo9awrac5c2sretm4l0c09apr4gn)
+- [Solution avancée](https://ibm.box.com/s/0mo398gtd8yxuqcp4fr76wqzzhlqcmvr)
 
 
 
