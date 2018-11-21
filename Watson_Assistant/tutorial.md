@@ -104,7 +104,7 @@ Voici la liste des entités finalisée:
 26. Activez les `Multiples Responses` et appuyez sur `Apply`. 
 27. Dans le champ `If assistant recognizes`, ajouter `@boissons:Latte`, saissisez la réponse dans le champ `Respond with`
 28. Rajoutez d'autres conditions comme `@boissons:espresso`, `@boissons:capuccino`
-29. Vous pouvez ensuite faire de même pour la demande de localisation
+29. Testez avec une question comme "Quel est le prix d'un Latte ?"
 
 Arborescence du dialogue :
 ![finished dialog](https://github.com/vperrinfr/Watson_Academy/blob/master/pictures/dialog.png)
