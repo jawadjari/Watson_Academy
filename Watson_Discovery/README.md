@@ -58,6 +58,7 @@
 }
 ```
 Remplacer les xxx par vos paramètres à trouver dans l'interface de Watson Discovery
+
 4. Créer un sous-noeud et ajouter le texte suivant $reponse.text
 5. Configurer un Jump To du noeud `Tout le reste`
-5. Ensuite tester la phrase suivante : "Qui a introduit le thé en France ?". Watson Assistant ne reconnaissant pas l'intention, Watson Discovery est appelé pour chercher la réponse la plus appropriée à cette question.
+6. Ensuite tester la phrase suivante : "Qui a introduit le thé en France ?". Watson Assistant ne reconnaissant pas l'intention, Watson Discovery est appelé pour chercher la réponse la plus appropriée à cette question.
