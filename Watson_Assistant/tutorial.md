@@ -113,7 +113,7 @@ Bravo, votre premier chatbot est en oeuvre :clap: :clap:
 
 ## Déploiement
 
-1. Cliquez sur la flèche en haud à gauche ou cliquez sur `Skills` dans le fil d'ariane
+1. Cliquez sur la flèche en haut à gauche ou cliquez sur `Skills` dans le haut de l'écran
 2. Cliquez sur `Assistant` 
 3. Cliquez sur `Create New`
 4. Saississez le nom de votre assistant, puis cliquez sur `Create`
