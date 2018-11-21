@@ -1,3 +1,7 @@
+# Workshop Visual Recognition
+
+Deck pour le lab
+
 ## Pour aller plus loin 
 
 ### Intégration avec Watson Assistant
