@@ -2,7 +2,7 @@
 Nous allons créer un chatbot qui permet la prise de commande de café ou thé et renseigne le client sur les produits et leurs prix.
 
 ## Création d'un compte ou accès à la plateforme IBM Cloud
-1. Aller sur le lient et créer un compte : https://console.bluemix.net/registration/
+1. Aller sur le lien et créer un compte : https://console.bluemix.net/registration/
 2. Ou, aller à  https://console.bluemix.net/ et identifiez vous avec votre compte.
 
 ## Création d'une instance IBM Watson Assistant (ex- Watson Conversation)
@@ -14,7 +14,7 @@ Nous allons créer un chatbot qui permet la prise de commande de café ou thé e
 
 ## Création d'un Skill
 1. Une fois dans l'outil d'administration de Watson Assistant, cliquez sur `Create` pour ajouter un nouveau skill
-2. Donnez un nom à ce skill par exemple `Coffee-bot` et sélectionnez la langue Française (sauf si vous souhaitez essayer dans une autre langue)
+2. Donnez un nom à ce skill par exemple `Coffee-bot` et sélectionnez la langue Française 
 
 ## Création des Intents/Intentions
 1. Cliquez `Add intent`
@@ -80,30 +80,31 @@ Voici la liste des entités finalisée:
 ## Construction du dialogue
 1. Cliquez sur l'onglet `Dialog`
 2. Cliquez `Create`
-3. Cliquez sur le node `Welcome` si vous souhaitez changer/personnaliser le message d'accueil
-4. Cliquez `Add node`, and name it `commande-boisson`
-5. Ajoutez votre intention `#commande-boisson` comme valeur dans le champ `If bot recognizes`
+3. Cliquez sur le node `Bienvenue` si vous souhaitez changer/personnaliser le message d'accueil
+4. Cliquez sur les 3 points du noeud `Bienvenue` et `Add node below`et nommer le `commande-boisson`
+5. Ajoutez votre intention `#commande-boisson` comme valeur dans le champ `If assistant recognizes`
 6. En haut à droite du noeud, cliquez sur `Customize`
-7. Activez les `Slots` et appuyez sur `Apply`
+7. Activez les `Slots`, sélectionnez `Prompt for everything` et appuyez sur `Apply`
 12. Dans la rubrique `Check for`, ajouter `@boissons`
 13. Dans la rubrique `If not present, ask` ajoutez une question comme "Que souhaitez-vous boire ?"
-14. Cliquez `Add slot`, et ajoutez une condition "prompt for" `@sys-number` avec la question "Combien de tasses de $boissons souhaitez-vous ?"
+14. Cliquez `Add slot`, et ajoutez une condition "Check for" `@sys-number` avec la question "Combien de tasses de $boissons souhaitez-vous ?"
 (Note: La syntaxe `$variable` permet l'accès au contenu du variable.)
 14. Cliquez `Add slot`, et ajoutez une condition "prompt for" `@Livraison` avec la question "A emporter ou sur place ?"
-15. Ajoutez la réponse "Ok, j'ai donc une $number $boissons pour vous, $Livraison ! Cela vous va ?  "
+15. Dans le champ "Then respond with", ajoutez la réponse "Ok, j'ai donc une $number $boissons pour vous, $Livraison ! Cela vous va ?  "
 16. Créez un noeud fils, avec le nom `validation`
 17. Dans le champ `If assistant recognizes`, saissisez `@Validation`. Ce noeud attend une entité de validation.
 18. En haut à droite du noeud, cliquez sur `Customize`
 19. Activez les `Multiples Responses` et appuyez sur `Apply`. 
-20. Dans le champ `If assistant recognizes`, ajouter `@Validation:Oui`, saissisez la réponse dans le champ `Respond with` suite à la confirmation.
-21. Dans le champ `If assistant recognizes`, ajouter `@Validation:Non`, saissisez la réponse dans le champ `Respond with`
-22. Cliquez `Add node`, and name it `prix-boisson`
-23. Ajoutez votre intention `#prix-boisson` comme valeur dans le champ `If bot recognizes`. Cliquez sur le signe `+` et rajouter l'entité `boissons` avdec le séparateur `AND`.
-24. En haut à droite du noeud, cliquez sur `Customize`
-25. Activez les `Multiples Responses` et appuyez sur `Apply`. 
-26. Dans le champ `If assistant recognizes`, ajouter `@boissons:Latte`, saissisez la réponse dans le champ `Respond with`
-27. Rajoutez d'autres conditions comme `@boissons:espresso`, `@boissons:capuccino`
-28. Vous pouvez ensuite faire de même pour la demande de localisation
+20. Dans le champ `If assistant recognizes`, ajouter `@Validation:Oui`, saissisez la réponse que vous voulez renvoyer dans le champ `Respond with` suite à la confirmation.
+21. Dans le champ `If assistant recognizes`, ajouter `@Validation:Non`, saissisez la réponse que vous voulez renvoyer dans le champ `Respond with`
+22. Tester les "slots" avec différentes questions du type simple "je veux du café" ou plus complet comme "je veux un café sur place"
+23. Créez un noeud `prix-boisson` sous (et non fils de) le noeud `commande-boisson`
+24. Ajoutez votre intention `#prix-boisson` comme valeur dans le champ `If assistant recognizes`. Cliquez sur le signe `+` et rajouter l'entité `boissons` avdec le séparateur `AND`.
+25. En haut à droite du noeud, cliquez sur `Customize`
+26. Activez les `Multiples Responses` et appuyez sur `Apply`. 
+27. Dans le champ `If assistant recognizes`, ajouter `@boissons:Latte`, saissisez la réponse dans le champ `Respond with`
+28. Rajoutez d'autres conditions comme `@boissons:espresso`, `@boissons:capuccino`
+29. Vous pouvez ensuite faire de même pour la demande de localisation
 
 Arborescence du dialogue :
 ![finished dialog](https://github.com/vperrinfr/Watson_Academy/blob/master/pictures/dialog.png)
