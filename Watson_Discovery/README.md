@@ -46,10 +46,10 @@
       "type": "server",
       "parameters": {
         "url": "https://gateway-fra.watsonplatform.net/discovery/api",
-        "apikey": "XXXX",
+        "apikey": "-LiI00sODXHG2CWPwjefCz_3GgGz3mkSL-J8v4xJJTPz",
         "question": "<?input.text?>",
-        "collection_id": "XXX",
-        "environment_id": "XXXX"
+        "collection_id": "43cb001b-ea83-48d3-9c29-6f9988588be0",
+        "environment_id": "8a352a4d-a124-4f36-9cea-6f542dd75811"
       },
       "credentials": "$private.function_credentials",
       "result_variable": "$reponse"
