@@ -37,7 +37,7 @@
   },
   "output": {
     "text": {
-      "values": [Recherche sur Watson Discovery, veuillez attendre quelques secondes ...],
+      "values": "[Recherche sur Watson Discovery, veuillez attendre quelques secondes ...]",
       "selection_policy": "sequential"
     }
   },
@@ -46,8 +46,8 @@
       "name": "arabenandrasana@fr.ibm.com_dev/actions/mine/CafeThe",
       "type": "server",
       "parameters": {
-        "url": “xxxxx,
-        "apikey": “xxxx,
+        "url": "xxxxx",
+        "apikey": "xxxx",
         "question": "<?input.text?>",
         "collection_id": “xxx”,
         "environment_id": “xxx”
