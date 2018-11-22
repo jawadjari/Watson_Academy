@@ -27,35 +27,42 @@
 3. Remplacer le contenu via le JSON Editor par le contenu ci-dessous:
 ```
 {
-  "context": {
-    "private": {
-      "function_credentials": {
-        "user": "4ba223cc-37a0-43a6-af42-d615ac44ff62",
-        "password": "bwBscazbXrb6jsDyQRJ34GKGTPHhJ7wF6vs9tBezGWxLnK0Jm9vR0vz4vHI8Uhyu"
-      }
-    }
-  },
   "output": {
     "text": {
       "values": "[Recherche sur Watson Discovery, veuillez attendre quelques secondes ...]",
       "selection_policy": "sequential"
-    }
+    },
+    "generic": [
+      {
+        "response_type": "text",
+        "values": [],
+        "selection_policy": "sequential"
+      }
+    ]
   },
   "actions": [
     {
-      "name": "arabenandrasana@fr.ibm.com_dev/actions/mine/CafeThe",
+      "name": "arabenandrasana@fr.ibm.com_dev/actions/mine/CafeThe2",
       "type": "server",
       "parameters": {
-        "url": "xxxxx",
-        "apikey": "xxxx",
+        "url": "https://gateway-fra.watsonplatform.net/discovery/api",
+        "apikey": "XXXX",
         "question": "<?input.text?>",
-        "collection_id": “xxx”,
-        "environment_id": “xxx”
+        "collection_id": "XXX",
+        "environment_id": "XXXX"
       },
       "credentials": "$private.function_credentials",
       "result_variable": "$reponse"
     }
-  ]
+  ],
+  "context": {
+    "private": {
+      "function_credentials": {
+        "user": "0f81e6d0-55a1-40a8-8a7d-59ba31b4610d",
+        "password": "kVcslp3g5Sf1ZjlJ2RF1T10f6oHXNOIq8oSvkYDJymMkuJhFsisoeJt4wTTKUVPR"
+      }
+    }
+  }
 }
 ```
 Remplacer les xxx par vos paramètres à trouver dans l'interface de Watson Discovery
