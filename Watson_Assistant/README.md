@@ -48,7 +48,7 @@ Liste des entités : [entities_csv](https://ibm.box.com/s/1z2o7xqgppzrpcap3siomw
 
 # Tutorial - Solution:
 
-- [Tutorial](https://github.com/vperrinfr/Watson_Academy/blob/master/Watson_Assistant/tutorial.md)
+- [Tutorial](https://github.com/jawadjari/Watson_Academy/blob/master/Watson_Assistant/tutorial.md)
 - [Solution](https://ibm.box.com/s/78d7fo9awrac5c2sretm4l0c09apr4gn)
 - [Solution avancée](https://ibm.box.com/s/0mo398gtd8yxuqcp4fr76wqzzhlqcmvr)
 
